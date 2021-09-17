@@ -16,7 +16,7 @@ function App() {
   const [city, setCity] = useState("");
 
   useEffect(() => {
-    fetch("https://paginationsearch.herokuapp.com/api/jobs")
+    fetch("http://localhost:8000/jobs")
       .then((res) => res.json())
       .then((result) => setJobs(result));
   }, [jobs]);
