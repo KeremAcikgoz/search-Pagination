@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap'
+import  Job  from './components/Job'
+import Paging from './components/Paging';
+import Search from './components/Search';
+
 
 function App() {
+
+  const [jobs, setJobs] = useState([]);
+  const [jobName, setJobName] = useState("");
+  const [page, setPage] = useState(1);
+  const [city, setCity] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/jobs")
+      .then((res) => res.json())
+      .then((result) => setJobs(result));
+  }, [jobs]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="container mt-4">
+      <h1 className='title'>Job List</h1>
+      <Search setJobName={setJobName} setCity={setCity} />
+      <Paging page={page} setPage={setPage} />
+      {jobName.length > 0 ? jobs.filter((val) => {
+        if(jobName === "") {
+          return val
+        } else if (val.job.toLowerCase().includes(jobName.toLowerCase())) {
+          return val
+        }
+      }).slice(page-1,page+10).map((job) => {
+        return <Job key={job.id} job={job} />
+      }): jobs.slice(page-1, page+10).map((job) => {
+        return <Job key={job.id} job={job} />
+      }) }
+    </Container>
   );
 }
 
