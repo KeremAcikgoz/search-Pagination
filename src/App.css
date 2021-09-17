@@ -28,7 +28,7 @@
 }
 
 .title {
-    color: rgb(7, 123, 161);
+    color: #fff;
     margin-left: 1rem;
 }
 
@@ -49,4 +49,13 @@
 
 .forn {
     width: 100px;
+}
+
+.button {
+    width: 30px;
+    border-radius: 10px;
+}
+
+.active {
+    background-color: rgb(7, 123, 161);
 }
