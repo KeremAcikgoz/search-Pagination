@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap'
-import  Job  from './components/Job'
 import Search from './components/Search';
 import Pages from './components/Pages'
 import Jobs from './components/Jobs';
@@ -13,11 +12,11 @@ function App() {
   const [jobs, setJobs] = useState([]);
   const [jobName, setJobName] = useState("");
   const [page, setPage] = useState(0);
-  const [jobsPerPage, setJobsPerPage] = useState(10)
+  const [jobsPerPage, setJobsPerPage] = useState(10);
   const [city, setCity] = useState("");
 
   useEffect(() => {
-    fetch("https://paginationsearch.herokuapp.com/api")
+    fetch("https://paginationsearch.herokuapp.com/api/jobs")
       .then((res) => res.json())
       .then((result) => setJobs(result));
   }, [jobs]);
