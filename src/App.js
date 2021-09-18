@@ -16,7 +16,7 @@ function App() {
   const [city, setCity] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/jobs")
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((result) => setJobs(result));
   }, [jobs]);
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Container className="container mt-4">
-      <h1 className='title mb-3'>Job List</h1>
+      <h1 className='title mb-3'>Posts</h1>
       <Search setJobName={setJobName} setCity={setCity} />
       <Pages page={page} setPage={setPage} pages={pages} />
       <Jobs jobs={jobs} page={page} jobName={jobName} city={city}/>

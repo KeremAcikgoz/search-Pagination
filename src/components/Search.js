@@ -6,11 +6,11 @@ const Search = ({ setJobName, setCity }) => {
         <Form className='mb-3 ml-3'>
             <Form.Row>
                 <Form.Group as={Col}>
-                    <Form.Control onChange={(e) => setJobName(e.target.value)}  placeholder="Search for a job!"  type="text" />
+                    <Form.Control onChange={(e) => setJobName(e.target.value)}  placeholder="Find a post!"  type="text" />
                 </Form.Group>
-                <Form.Group as={Col}>
+                {/* <Form.Group as={Col}>
                     <Form.Control onChange={(e) => setCity(e.target.value)}  placeholder="Search by City" type="text" />
-                </Form.Group>
+                </Form.Group> */}
             </Form.Row>
         </Form>
     )

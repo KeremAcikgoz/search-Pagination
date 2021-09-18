@@ -7,10 +7,10 @@ const Jobs = ({ jobName, jobs, page, city }) => {
       {jobName.length > 0 || city.length > 0
         ? jobs
             .filter((job) => {
-              if (jobName === "" && city === "") {
+              if (jobName === "" /*&& city === ""*/) {
                 return job;
               } else if (
-                job.job.toLowerCase().includes(jobName.toLowerCase()) && job.city.toLowerCase().includes(city.toLowerCase())
+                job.title.toLowerCase().includes(jobName.toLowerCase()) /*&& job.city.toLowerCase().includes(city.toLowerCase())*/
               ) {
                 return job;
               }

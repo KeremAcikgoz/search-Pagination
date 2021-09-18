@@ -8,11 +8,11 @@ const Job = ({ job }) => {
     return (
         <li key={job.id} className='list-item'>
         <div className='props'>
-          <h2 className="name">{job.job} <span className="text-muted font-weight-light">- {job.company}</span></h2>
-          <div className='details'>
+          <h2 className="name">{job.title}</h2> {/*<span className="text-muted font-weight-light">- {job.company}</span></h2>*/}
+          {/* <div className='details'>
             <Badge variant="dark" className="mr-2">{job.date}</Badge>
             <Badge variant="info">{job.city}</Badge>
-          </div>
+          </div> */}
           <button 
             className='mt-2 btn-sm btn-outline-info' 
             style={{width: '150px'}} 
@@ -23,7 +23,7 @@ const Job = ({ job }) => {
             </button>
             <Collapse in={click}>
                 <div className="mt-3">
-                    <p>{job.details}</p>
+                    <p>{job.body}</p>
                 </div>
             </Collapse>
         </div>
