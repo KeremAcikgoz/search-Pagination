@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pages = ({page, setPage, pages}) => {
+const Pages = ({ page, setPage, pages}) => {
 
 
     return (

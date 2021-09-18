@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Badge, Collapse} from 'react-bootstrap'
+import { Collapse } from 'react-bootstrap'
 
 const Job = ({ job }) => {
 
